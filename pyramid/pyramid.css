@@ -1,0 +1,165 @@
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .outer-ring {
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    border: 100px solid #333;
+  }
+
+  .circle {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: rgb(155, 230, 253);
+  }
+
+  .cover {
+    position: absolute;
+    top: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: none;
+    animation-name: cover-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  .sun-route {
+    position: relative;
+    top: 68px;
+    width: 200px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: transparent;
+    animation-name: sun-route-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  .sun {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 30px;
+    left: -10px;
+    border-radius: 50%;
+    background-color: yellow;
+  }
+
+  .pyramid {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  .right-pyramid {
+    width: 0;
+    border-left: 0px solid transparent;
+    border-right: 30px solid transparent;
+    transform: skewX(20deg);
+    animation-name: right-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  .left-pyramid {
+    width: 0;
+    border-left: 70px solid transparent;
+    border-right: 0px solid transparent;
+    transform: skewX(20deg);
+    animation-name: left-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+  }
+
+  .ground {
+    width: 175px;
+    height: 100px;
+    background-color: rgb(247, 216, 115);
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .shadow {
+    position: absolute;
+    animation-name: shadow-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes cover-animation {
+    0% {background-color: #333;}
+    50% {background-color: transparent;}
+    100% {background-color: #333;} 
+  }
+
+  @keyframes right-animation {
+    0% {border-bottom: 50px solid rgb(189, 184, 184);}
+    50% {border-bottom: 50px solid rgb(207, 201, 201);}
+    100% {border-bottom: 50px solid white;}
+  }
+
+  @keyframes left-animation {
+    0% {border-bottom: 50px solid white;}
+    50% {border-bottom: 50px solid rgb(235, 220, 220);}
+    100% {border-bottom: 50px solid rgb(212, 205, 205);}
+  }
+
+  @keyframes sun-route-animation {
+    0% {transform: translateY(-0px);}
+    50% {transform: translateY(-0px) rotate(60deg);}
+    100% {transform:translateY(-0px) rotate(180deg);}
+  }
+
+  @keyframes shadow-animation {
+    0% {
+      border-left: 100px solid transparent; 
+      border-right: 0px solid transparent;
+      border-top: 20px solid rgba(155, 148, 109, 0.685); 
+      transform: skewX(70deg) translate(50px);
+    }
+    50% {
+      border-left: 50px solid transparent; 
+      border-right: 60px solid transparent;
+      border-top: 10px solid rgba(155, 148, 109, 0.685); 
+      transform: skewX(0) translate(15px);
+     }
+    100% {
+      border-left: 0px solid transparent; 
+      border-right: 100px solid transparent;
+      border-top: 20px solid rgba(155, 148, 109, 0.685); 
+      transform: skewX(-70deg) translate(-5px);
+
+    }
+  }
+
